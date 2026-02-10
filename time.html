@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Check</title>
+    <style>
+        /* CSS to position the element at bottom-left */
+        .float-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #ffffff;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            z-index: 9999;
+            min-width: 150px;
+        }
+
+        /* Style for the hidden text area */
+        #display-area {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            display: none; /* Hidden by default */
+        }
+
+        /* Style for the button */
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Style for the link */
+        a {
+            text-decoration: none;
+            color: crimson;
+            font-size: 14px;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- This is the container fixed at bottom-left -->
+    <div class="float-container">
+        <div id="time"></div>
+        <button onclick="showTime()">Check Time</button>
+    </div>
+
+    <script>
+        function showTime() {
+            var now = new Date();
+            var timeString = now.toLocaleTimeString();
+
+            // 2. Define the link
+            var myLink = '<a href="https://time.is/" target="_blank">link</a>';
+
+            var display = document.getElementById("time");
+            display.innerHTML = timeString + "<br>" + myLink;
+        }
+    </script>
+
+</body>
+</html>
